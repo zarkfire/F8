@@ -1,0 +1,19 @@
+curl -X POST http://localhost:8080/auth/login ^
+-H "Content-Type: application/json" ^
+-d "{\"email\":\"mathis2@test.com\",\"password\":\"123aa4\"}"
+
+curl -X POST http://localhost:8080/restaurants ^
+-H "Content-Type: application/json" ^
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoaXMyQHRlc3QuY29tIiwiaWF0IjoxNzc3NzIwMDAxLCJleHAiOjE3Nzc3MjM2MDF9.gTMzDERfjVy2MGYRySG9hLAiDvrRZX36TJ-YXm77Eyk" ^
+-d "{\"name\":\"Sushi Master\",\"address\":\"Paris\",\"description\":\"Fresh sushi\"}"
+
+curl http://localhost:8080/restaurants ^
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoaXMyQHRlc3QuY29tIiwiaWF0IjoxNzc3NzIwMDAxLCJleHAiOjE3Nzc3MjM2MDF9.gTMzDERfjVy2MGYRySG9hLAiDvrRZX36TJ-YXm77Eyk"
+
+curl -X POST http://localhost:8080/menus ^
+-H "Content-Type: application/json" ^
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoaXMyQHRlc3QuY29tIiwiaWF0IjoxNzc3NzMwODI1LCJleHAiOjE3Nzc4MTcyMjV9.tiyPdv2HzZyfz_LwRILIy3OUbdeRLnMbACuJoGOoRPg" ^
+-d "{\"name\":\"Pizza Margherita\",\"price\":12.5,\"restaurant\":{\"id\":2}}"
+
+curl http://localhost:8080/menus ^
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXRoaXMyQHRlc3QuY29tIiwiaWF0IjoxNzc3NzMwODI1LCJleHAiOjE3Nzc4MTcyMjV9.tiyPdv2HzZyfz_LwRILIy3OUbdeRLnMbACuJoGOoRPg"
